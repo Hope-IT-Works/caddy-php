@@ -1,0 +1,16 @@
+{
+    storage file_system .\caddy
+}
+
+#https://caddyserver.com/docs/caddyfile/directives/basicauth
+#https://caddyserver.com/docs/running
+
+localhost 127.0.0.1 {
+    root * .\www
+    log {
+        output file .\log\caddy.log
+        format console
+    }
+    php_fastcgi localhost:9000
+    file_server browse
+}
