@@ -77,11 +77,15 @@ try {
     $PHP_DEST   = $OUTPUT_PATH+"\php"
     $CADDY_DEST = $OUTPUT_PATH
     $WWW_DEST   = $OUTPUT_PATH+"\www"
+    $LOG_DEST   = $OUTPUT_PATH+"\log"
+    $CADDY_CONF = $OUTPUT_PATH+"\caddy"
     New-Item -Path $OUTPUT_PATH -ItemType "Directory" | Out-Null
     New-Item -Path $PHP_DEST -ItemType "Directory" | Out-Null
     New-Item -Path $WWW_DEST -ItemType "Directory" | Out-Null
+    New-Item -Path $LOG_DEST -ItemType "Directory" | Out-Null
+    New-Item -Path $CADDY_CONF -ItemType "Directory" | Out-Null
 } catch {
-    Write-Host -ForegroundColor Red "Error: Couldn't create directory. Elevate session or change path."
+    Write-Host -ForegroundColor Red "Error: Couldn't create directories. Elevate session or change path."
     exit
 }
 try {
