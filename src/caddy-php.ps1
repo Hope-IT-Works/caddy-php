@@ -22,6 +22,10 @@ if($OS_ARCH -eq "x86"){
     Write-Host -ForegroundColor Red "Warning: 32-Bit systems are not supported."
 }
 
+
+<#
+    PHP
+#>
 Write-Host -ForegroundColor Yellow "`n/---\`n PHP`n\---/`n"
 $PHP_URL      = "https://windows.php.net/downloads/releases/"
 $PHP_RES      = (Invoke-WebRequest -UseBasicParsing -Uri $PHP_URL).Links.href | Where-Object -FilterScript {$_ -match ("/downloads/releases/php-")}
@@ -51,6 +55,11 @@ $PHP_SELECTED = $PHP_VERSIONS[$PHP_SELECTED]
 $PHP_SELECTED_VERSION = $PHP_SELECTED.Name.Split("-")[0]
 Write-Host -ForegroundColor Yellow ("`n"+$PHP_SELECTED.Name+" was selected.")
 
+
+<#
+    CADDY
+#>
+Write-Host -ForegroundColor Yellow "`n/-----\`n Caddy`n\-----/`n"
 $CADDY_URL = "https://api.github.com/repos/caddyserver/caddy/releases/latest"
 $CADDY_RES = Invoke-WebRequest -UseBasicParsing -Uri $CADDY_URL | ConvertFrom-Json
 $CADDY_RES = $CADDY_RES.assets | Where-Object -FilterScript {$_.content_type -eq "application/zip" -and $_.name -match "windows" -and $_.name -match "amd64"}
