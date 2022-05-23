@@ -1,5 +1,5 @@
 # caddy-php
-script for setting up a caddy-server with PHP support
+tool for setting up a caddy-server with PHP support
 
 ## About
 After some research I realized that there was no way to set up a caddy server with PHP support without much effort. That's why I created this repository.
