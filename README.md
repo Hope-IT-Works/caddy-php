@@ -22,9 +22,9 @@ caddy run --watch
 ```
 
 ## CLI Documentation
-Caddy: [Link](https://caddyserver.com/docs/command-line)
+`caddy`: [Link](https://caddyserver.com/docs/command-line)
 
-php-cgi (`-h`): 
+`php-cgi` (-h): 
 ```
 Usage: php [-q] [-h] [-s] [-v] [-i] [-f <file>]
        php <file> [args...]
