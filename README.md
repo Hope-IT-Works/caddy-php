@@ -1,15 +1,21 @@
 # caddy-php
 
-tool for setting up a caddy-server with PHP support
+tool for setting up a caddy-server with PHP support and optional MySQL-server
+
+## Warning
+
+*MySQL-support is still WIP!*
 
 ## About
 
-After some research I realized that there was no way to set up a caddy server with PHP support without much effort. That's why I created this repository.
+After some research I realized that there was no way to set up a caddy server with PHP support without much effort. That's why I created this repository. Later MySQL-server support was integrated too.
 
 ```mermaid
 flowchart LR
+       User-- HTTP/HTTPS -->Caddy
        Caddy-- "php_fastcgi" -->PHP-CGI
        PHP-CGI-- Result -->Caddy
+       PHP-CGI<-.->MySQL-Server
 ```
 
 ## How to install
