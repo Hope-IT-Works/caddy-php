@@ -1,0 +1,11 @@
+#name: Build Release
+#on:
+#  schedule:
+#    - cron: '*/15 * * * *'
+#  workflow_dispatch:
+
+#jobs:
+#  build_schedule:
+#    runs-on: windows-latest
+#    steps:
+#      - name: "test"
