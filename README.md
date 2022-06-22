@@ -1,3 +1,5 @@
+![caddy-php](https://socialify.git.ci/Hope-IT-Works/caddy-php/image?description=1&descriptionEditable=tool%20for%20setting%20up%20a%20caddy-server%20with%20PHP%20support%20and%20optional%20MariaDB-server&font=Raleway&owner=1&pattern=Charlie%20Brown&theme=Light)
+
 # caddy-php
 
 tool for setting up a caddy-server with PHP support and optional MariaDB-server
