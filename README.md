@@ -1,21 +1,21 @@
 # caddy-php
 
-tool for setting up a caddy-server with PHP support and optional MySQL-server
+tool for setting up a caddy-server with PHP support and optional MariaDB-server
 
 ## Warning
 
-*MySQL-support is still WIP!*
+*MariaDB-support is still WIP!*
 
 ## About
 
-After some research I realized that there was no way to set up a caddy server with PHP support without much effort. That's why I created this repository. Later MySQL-server support was integrated too.
+After some research, I realized that there was no way to set up a caddy server with PHP support without much effort. That's why I created this repository. Later MariaDB-server support was integrated too.
 
 ```mermaid
 flowchart LR
        User-- HTTP/HTTPS -->Caddy
        Caddy-- "php_fastcgi" -->PHP-CGI
        PHP-CGI-- Result -->Caddy
-       PHP-CGI<-.->MySQL-Server
+       PHP-CGI<-.->MariaDB[("\nMariaDB-Server\n(SQL-Server)")]
 ```
 
 ## How to install
@@ -25,7 +25,7 @@ Download the `.ps1`-file from [here](./src/). Run the script in PowerShell with 
 The script
 
 - will suggest available PHP versions and lets you choose.
-- tries to choose the caddy version automatically but lets you choose when it has problems to do so.
+- tries to choose the caddy version automatically but lets you choose when it has problems doing so.
 - creates a subfolder named "caddy-php".
 
 ## How to run
@@ -38,30 +38,33 @@ php-cgi -b 127.0.0.1:9000
 caddy run --watch
 ```
 
-## CLI Documentation
+## Documentation
 
-`caddy`: [Link](https://caddyserver.com/docs/command-line)
+| Service | Documentation |
+| --- | --- |
+| Caddy | [Link](https://caddyserver.com/docs/command-line) |
+| MariaDB | [Link](https://mariadb.com/kb/en/documentation/) |
+| PHP | [Link](https://www.php.net/manual/en/features.commandline.options.php) |
 
-`php-cgi` (-h): 
-```
-Usage: php [-q] [-h] [-s] [-v] [-i] [-f <file>]
-       php <file> [args...]
-  -a               Run interactively
-  -b <address:port>|<port> Bind Path for external FASTCGI Server mode
-  -C               Do not chdir to the script's directory
-  -c <path>|<file> Look for php.ini file in this directory
-  -n               No php.ini file will be used
-  -d foo[=bar]     Define INI entry foo with value 'bar'
-  -e               Generate extended information for debugger/profiler
-  -f <file>        Parse <file>.  Implies `-q'
-  -h               This help
-  -i               PHP information
-  -l               Syntax check only (lint)
-  -m               Show compiled in modules
-  -q               Quiet-mode.  Suppress HTTP Header output.
-  -s               Display colour syntax highlighted source.
-  -v               Version number
-  -w               Display source with stripped comments and whitespace.
-  -z <file>        Load Zend extension <file>.
-  -T <count>       Measure execution time of script repeated <count> times.
-```
+## FAQ
+
+<details><summary>Is it portable?</summary>
+<p>
+       The services used by this project are configured to work portable. Move your installation where you want.
+</p>
+</details>
+
+<!--
+<details><summary></summary>
+<p>
+       
+</p>
+</details>
+-->
+
+<details><summary>Why MariaDB?</summary>
+<p>
+       MariaDB is a open-source fork of MySQL. MariaDB provides better performance and more features than MySQL.<br>
+       <a href="https://www.guru99.com/mariadb-vs-mysql.html">More Information on this topic</a>
+</p>
+</details>
