@@ -4,6 +4,8 @@
 
 tool for setting up a caddy-server with PHP support and optional MariaDB-server
 
+> possible rename to WCMP (Windows Caddy MariaDB PHP, e.g. LAMP (Linux Apache MySQL PHP)
+
 ## Warning
 
 *MariaDB-support is still WIP!*
