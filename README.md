@@ -1,3 +1,6 @@
+# THIS REPOSITORY WAS REPLACED BY [WCMP](https://github.com/Hope-IT-Works/WCMP)
+
+
 ![header](https://user-images.githubusercontent.com/52013820/174985791-9bc8cc40-f924-402f-a287-e95fc9504f25.png)
 
 # caddy-php
